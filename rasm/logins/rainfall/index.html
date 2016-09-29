@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>rainyday.js demo #3</title>
+
+		<link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css' rel='stylesheet' type='text/css'>
+		<link href='rain.css' rel='stylesheet' type='text/css'>
+		 
+		<script src="rainyday.js"></script>
+		<script>
+			function run() {
+				var image = document.getElementById('background');
+				image.onload = function() {
+					var engine = new RainyDay({
+						image: this
+					});
+					engine.rain([ [0, 2, 200], [3, 3, 1] ], 100);
+				};
+				image.crossOrigin = 'anonymous';
+            	image.src = 'http://i.imgur.com/OVQkDRE.jpg';
+            }
+		</script>
+
+	</head>
+	<body onload="run();">
+
+		<div class="login">	
+			<div class="form">			
+				<div style="margin-bottom: 15%; "><span style="text-shadow: 2px 2px #c3c1be;color: white;"></span></div>			
+				<input type="text" placeholder="username" name="user"><br>
+				<input type="password" placeholder="password" name="password"><br>
+				<input type="button" value="Login">
+
+				<div class="squaredThree">
+			      <input type="checkbox" value="None" id="squaredThree" name="check" checked />
+			      <label for="squaredThree"></label> 
+			      <span id="remember">Remember me</span>
+			      <span id="forgotten">Forgotten password</span>
+			    </div> 
+				<div style="text-align: start;margin-left: 12%;" >
+					<div style="width:24%; display:inline-block">						
+						<img src="img/google.png" style="width:50%;cursor: pointer;" /> 
+					</div>
+					<div style="width:24%; display:inline-block"> 						
+						<img src="img/facebook.png"  style="width:50%;cursor: pointer;"  /> 
+					</div>
+					<div style="width:24%; display:inline-block">						
+						<img src="img/twiter.png"  style="width:50%;cursor: pointer;"  /> 
+					</div>
+					<div style="width:23%; display:inline-block">						
+						<img src="img/linkdin.png"  style="width:50%;cursor: pointer;"  /> 
+					</div>
+				</div>
+			</div>		 
+		</div>
+		<img id="background" alt="background" src="" />
+	</body>
+</html>
